@@ -1,0 +1,5 @@
+package org.works.model.domain.attachment;
+
+public enum ContentType {
+	IMAGE_BMP, IMAGE_GIF, IMAGE_JPEG, APPLICATION_POWERPOINT, APPLICATION_MSWORD, APPLICATION_ZIP, APPLICATION_PDF, UNKNOWN
+}
