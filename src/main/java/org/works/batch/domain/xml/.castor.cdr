@@ -1,0 +1,5 @@
+#Sun May 26 21:50:43 CST 2013
+org.works.batch.domain.xml.RecDateTime=org.works.batch.domain.xml.descriptors.RecDateTimeDescriptor
+org.works.batch.domain.xml.PriceList=org.works.batch.domain.xml.descriptors.PriceListDescriptor
+org.works.batch.domain.xml.Price=org.works.batch.domain.xml.descriptors.PriceDescriptor
+org.works.batch.domain.xml.Prices=org.works.batch.domain.xml.descriptors.PricesDescriptor
