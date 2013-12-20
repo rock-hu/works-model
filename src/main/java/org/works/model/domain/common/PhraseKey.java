@@ -2,18 +2,14 @@ package org.works.model.domain.common;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-
-@Embeddable
 public class PhraseKey implements Serializable {
-	@Column(length = 5, nullable = false)
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String country;
-	@Column(length = 5, nullable = false)
 	private String language;
-	@Column(length = 20, nullable = false)
 	private String appModule;
-	@Column(length = 60, nullable = false)
 	private String code;
 
 	public String getCountry() {
@@ -52,12 +48,10 @@ public class PhraseKey implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ ((appModule == null) ? 0 : appModule.hashCode());
+		result = prime * result + ((appModule == null) ? 0 : appModule.hashCode());
 		result = prime * result + ((code == null) ? 0 : code.hashCode());
 		result = prime * result + ((country == null) ? 0 : country.hashCode());
-		result = prime * result
-				+ ((language == null) ? 0 : language.hashCode());
+		result = prime * result + ((language == null) ? 0 : language.hashCode());
 		return result;
 	}
 
@@ -97,8 +91,7 @@ public class PhraseKey implements Serializable {
 
 	}
 
-	public PhraseKey(String country, String language, String appModule,
-			String code) {
+	public PhraseKey(String country, String language, String appModule, String code) {
 		super();
 		this.country = country;
 		this.language = language;

@@ -2,26 +2,15 @@ package org.works.model.domain.group;
 
 import java.io.Serializable;
 
-import javax.persistence.Embeddable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import org.works.model.domain.user.User;
 
-@Embeddable
 public class GroupUserRelationshipId implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -867276434815631936L;
-	//@NotAudited
-	@ManyToOne
-	@JoinColumn(name = "group_id", updatable = false, insertable = false, referencedColumnName = "group_id")
 	private Group group;
-	//@NotAudited
-	@ManyToOne
-	@JoinColumn(name = "user_id", updatable = false, insertable = false, referencedColumnName = "user_id")
 	private User user;
 
 	public Group getGroup() {

@@ -32,4 +32,9 @@ public enum PriceType {
 		throw new NoSuchElementException(name + "not found");
 	}
 
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+
 }

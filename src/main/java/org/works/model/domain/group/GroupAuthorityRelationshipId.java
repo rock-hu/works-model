@@ -2,26 +2,15 @@ package org.works.model.domain.group;
 
 import java.io.Serializable;
 
-import javax.persistence.Embeddable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import org.works.model.domain.authority.Authority;
 
-@Embeddable
 public class GroupAuthorityRelationshipId implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 2404907131726261737L;
-	//@NotAudited
-	@ManyToOne
-	@JoinColumn(name = "group_id", referencedColumnName = "group_id", insertable = false, updatable = false)
 	private Group group;
-	//@NotAudited
-	@ManyToOne
-	@JoinColumn(name = "authority_id", referencedColumnName = "authority_id", insertable = false, updatable = false)
 	private Authority authority;
 
 	public Group getGroup() {
@@ -44,8 +33,7 @@ public class GroupAuthorityRelationshipId implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ ((authority == null) ? 0 : authority.hashCode());
+		result = prime * result + ((authority == null) ? 0 : authority.hashCode());
 		result = prime * result + ((group == null) ? 0 : group.hashCode());
 		return result;
 	}

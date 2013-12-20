@@ -4,49 +4,19 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-
 import org.apache.commons.lang.builder.ToStringBuilder;
-import org.hibernate.annotations.Index;
-import org.hibernate.envers.Audited;
-import org.hibernate.envers.RelationTargetAuditMode;
 
-@Entity
-@Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
-@Table(name = "t_group")
-public class Group /*extends AbstractAuditable<User, Long> */ implements Serializable{
+public class Group implements Serializable {
 	private static final long serialVersionUID = -4097963501691758744L;
-	
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "group_id_seq_gen")
-	@SequenceGenerator(name = "group_id_seq_gen", sequenceName = "group_seq")
 
-	@Column(name="GROUP_ID")
 	private Long groupId;
 
-	@Column(name = "group_name", nullable = false, unique = true, length = 50)
-	@Index(name = "idx_group_name")
 	private String groupName;
 
-	@Column(name = "group_comment", nullable = false, length = 200)
 	private String groupComment;
 
-	@Column
 	private boolean enabled;
-	//@NotAudited
-	@OneToMany(mappedBy = "id.group", cascade = CascadeType.REFRESH)
 	private Set<GroupAuthorityRelationship> groupAuthorityRelationships;
-	//@NotAudited
-	@OneToMany(mappedBy = "id.group", cascade = CascadeType.REFRESH)
 	private Set<GroupUserRelationship> groupUserRelationships;
 
 	public Group() {
@@ -64,8 +34,7 @@ public class Group /*extends AbstractAuditable<User, Long> */ implements Seriali
 		return groupAuthorityRelationships;
 	}
 
-	public void setGroupAuthorityRelationships(
-			Set<GroupAuthorityRelationship> groupAuthorityRelationships) {
+	public void setGroupAuthorityRelationships(Set<GroupAuthorityRelationship> groupAuthorityRelationships) {
 		this.groupAuthorityRelationships = groupAuthorityRelationships;
 	}
 
@@ -73,8 +42,7 @@ public class Group /*extends AbstractAuditable<User, Long> */ implements Seriali
 		return groupUserRelationships;
 	}
 
-	public void setGroupUserRelationships(
-			Set<GroupUserRelationship> groupUserRelationships) {
+	public void setGroupUserRelationships(Set<GroupUserRelationship> groupUserRelationships) {
 		this.groupUserRelationships = groupUserRelationships;
 	}
 
@@ -101,15 +69,13 @@ public class Group /*extends AbstractAuditable<User, Long> */ implements Seriali
 		}
 	}
 
-	public void removeGroupAuthorityRelationship(
-			Set<GroupAuthorityRelationship> rels) {
+	public void removeGroupAuthorityRelationship(Set<GroupAuthorityRelationship> rels) {
 		if (groupAuthorityRelationships != null) {
 			groupAuthorityRelationships.remove(rels);
 		}
 	}
 
-	public void addGroupAuthorityRelationships(
-			Set<GroupAuthorityRelationship> rels) {
+	public void addGroupAuthorityRelationships(Set<GroupAuthorityRelationship> rels) {
 		if (groupAuthorityRelationships != null) {
 			groupAuthorityRelationships.addAll(rels);
 		} else {
@@ -147,8 +113,6 @@ public class Group /*extends AbstractAuditable<User, Long> */ implements Seriali
 			groupUserRelationships.addAll(rels);
 		}
 	}
-
-
 
 	public String getGroupComment() {
 		return groupComment;

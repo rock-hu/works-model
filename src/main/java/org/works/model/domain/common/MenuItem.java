@@ -2,59 +2,173 @@ package org.works.model.domain.common;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-
-import org.hibernate.envers.Audited;
-import org.hibernate.envers.RelationTargetAuditMode;
-
-@Entity
-@Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
-@Table(name = "T_MENU_ITEM")
 public class MenuItem implements Serializable {
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "menu_item_id_seq_gen")
-	@SequenceGenerator(name = "menu_item_id_seq_gen", sequenceName = "MENU_ITEM_SEQ")
-	@Column(name = "MENU_ITEM_ID")
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Long menuItemId;
-	@Column
 	private String parentName;
-	@Column(unique = true, nullable = false)
 	private String name;
-	@Column
 	private String titleCode;
-	@Column
 	private String description;
-	@Column
 	private String location;
-	@Column
 	private String target;
-	@Column
 	private String onclick;
-	@Column
 	private String onmouseover;
-	@Column
 	private String onmouseout;
-	@Column
 	private String image;
-	@Column
 	private String altImageCode;
-	@Column
 	private String tooltipCode;
 
-	@Column
 	private String page;
-	@Column
 	private String width;
-	@Column
 	private String height;
-	@Column
 	private String forward;
-	@Column
 	private String action;
+
+	public Long getMenuItemId() {
+		return menuItemId;
+	}
+
+	public void setMenuItemId(Long menuItemId) {
+		this.menuItemId = menuItemId;
+	}
+
+	public String getParentName() {
+		return parentName;
+	}
+
+	public void setParentName(String parentName) {
+		this.parentName = parentName;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getTitleCode() {
+		return titleCode;
+	}
+
+	public void setTitleCode(String titleCode) {
+		this.titleCode = titleCode;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getTarget() {
+		return target;
+	}
+
+	public void setTarget(String target) {
+		this.target = target;
+	}
+
+	public String getOnclick() {
+		return onclick;
+	}
+
+	public void setOnclick(String onclick) {
+		this.onclick = onclick;
+	}
+
+	public String getOnmouseover() {
+		return onmouseover;
+	}
+
+	public void setOnmouseover(String onmouseover) {
+		this.onmouseover = onmouseover;
+	}
+
+	public String getOnmouseout() {
+		return onmouseout;
+	}
+
+	public void setOnmouseout(String onmouseout) {
+		this.onmouseout = onmouseout;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public String getAltImageCode() {
+		return altImageCode;
+	}
+
+	public void setAltImageCode(String altImageCode) {
+		this.altImageCode = altImageCode;
+	}
+
+	public String getTooltipCode() {
+		return tooltipCode;
+	}
+
+	public void setTooltipCode(String tooltipCode) {
+		this.tooltipCode = tooltipCode;
+	}
+
+	public String getPage() {
+		return page;
+	}
+
+	public void setPage(String page) {
+		this.page = page;
+	}
+
+	public String getWidth() {
+		return width;
+	}
+
+	public void setWidth(String width) {
+		this.width = width;
+	}
+
+	public String getHeight() {
+		return height;
+	}
+
+	public void setHeight(String height) {
+		this.height = height;
+	}
+
+	public String getForward() {
+		return forward;
+	}
+
+	public void setForward(String forward) {
+		this.forward = forward;
+	}
+
+	public String getAction() {
+		return action;
+	}
+
+	public void setAction(String action) {
+		this.action = action;
+	}
+
 }
