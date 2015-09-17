@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 public class StockPriceHistory implements Serializable {
 	/**
 	 * 
@@ -132,4 +134,8 @@ public class StockPriceHistory implements Serializable {
 		this.priceType = priceType;
 	}
 
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
+	}
 }

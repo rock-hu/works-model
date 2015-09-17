@@ -1,10 +1,12 @@
 package org.works.model;
 
-import junit.framework.TestCase;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.annotations.Test;
 
-import org.junit.Test;
+@ContextConfiguration(locations = { "classpath:model/applicationContext-model-registry.xml" })
+public class DomainModelTest extends AbstractTestNGSpringContextTests {
 
-public class DomainModelTest extends TestCase {
 	@Test
 	public void testModuleStartup() {
 	}

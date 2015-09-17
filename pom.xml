@@ -62,6 +62,11 @@
 			<groupId>org.codehaus.castor</groupId>
 			<artifactId>castor-xml-schema</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
